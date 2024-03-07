@@ -24,7 +24,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
   </ol>
 </details>
@@ -46,145 +45,77 @@ This project is developed solely for educational purposes to demonstrate the cap
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## ScrapeOps Proxy
-This LinkedIn spider uses [ScrapeOps Proxy](https://scrapeops.io/proxy-aggregator/) as the proxy solution. ScrapeOps has a free plan that allows you to make up to 1,000 requests per month which makes it ideal for the development phase, but can be easily scaled up to millions of pages per month if needs be.
+<!-- GETTING STARTED -->
+## Getting Started
 
-You can [sign up for a free API key here](https://scrapeops.io/app/register/main).
+1. Set up proxy
+   - Since Linkedin doesn't allow user's to scrap their data, you have to set up a proxy.
+   - You can [sign up for a free API key here](https://scrapeops.io/app/register/main). ScrapeOps has a free plan that allows you to make up to 1,000 requests per month.
+   - Get your API key and add to the `SCRAPEOPS_API_KEY` in the ``settings.py`` file.
+     ```python
 
-To use the ScrapeOps Proxy you need to first install the proxy middleware:
+      SCRAPEOPS_API_KEY = 'YOUR_API_KEY'
+      
+      SCRAPEOPS_PROXY_ENABLED = True
+      
+      DOWNLOADER_MIDDLEWARES = {
+          'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,
+      }
+      
+      ```
+3. Set up OpenAI API
+   - To use this software, you need an OpenAI API key, which powers the AI-driven features, including generating personalized cover letters based on your LinkedIn profile.
+   - Sign up for an account at [OpenAI](https://openai.com/)
+   - Once you have an OpenAI account, log in and go to the API section and then to API Keys sidebar sectioon. Here, you'll find your API key, which is a unique token you'll use to authenticate your requests. 
+   - Get your API key by pressing Create new secret key
+   - Your API key is like a password. Keep it secure and do not share it. Store it in a safe place, as you will need it to configure the software.
+   - Copy your API key and add to the `OPENAI_API_KEY` in the ``linkedin/spiders/linkedin_people_profile.py`` file.
+     ```python
 
-```python
+      """
+        BUILDING COVER LETTERS BASED ON THE DATA FROM LINKEDIN
+        """
+        desired_role = input("Enter the desired role: ")
+        company = input("Enter the company name: ")
+        extra = input("Enter any additional information you want to focus on in your cover-letter (optional): ")
 
-pip install scrapeops-scrapy-proxy-sdk
+        client = OpenAI(api_key = 'OPENAI_API_KEY')
+      
+      ```
+4. Clone the repo
+   ```sh
+   git clone https://github.com/cprite/cover-letter-builder.git
+   ```
+5. Install the required dependencies
+   ```sh
+   pip install -r requirements.txt
+   ```
+6. Ready to Go!
+   - To run the program, execute following command and follow simple instructions
+     ```
 
-```
+      scrapy crawl linkedin_people_profile
+      
+      ```
+   - All cover letters will be saved in the program folder in cover_letters.txt file
 
-Then activate the ScrapeOps Proxy by adding your API key to the `SCRAPEOPS_API_KEY` in the ``settings.py`` file.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-```python
+<!-- CONTRIBUTING -->
+## Contributing
 
-SCRAPEOPS_API_KEY = 'YOUR_API_KEY'
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-SCRAPEOPS_PROXY_ENABLED = True
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-DOWNLOADER_MIDDLEWARES = {
-    'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,
-}
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-```
-
-Then activate the ScrapeOps Proxy by adding your API key to the `SCRAPEOPS_API_KEY` in the ``settings.py`` file.
-
-```python
-
-SCRAPEOPS_API_KEY = 'YOUR_API_KEY'
-
-# Add In The ScrapeOps Monitoring Extension
-EXTENSIONS = {
-'scrapeops_scrapy.extension.ScrapeOpsMonitor': 500, 
-}
-
-
-DOWNLOADER_MIDDLEWARES = {
-
-    ## ScrapeOps Monitor
-    'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
-    'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
-    
-    ## Proxy Middleware
-    'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,
-}
-
-```
-
-## Running The Scrapers
-Make sure Scrapy and the ScrapeOps Monitor is installed:
-
-```
-
-pip install scrapy scrapeops-scrapy
-
-```
-
-To run the LinkedIn spiders you should first set the search query parameters you want to search by updating the `profile_list` list in the spiders:
-
-```python
-
-def start_requests(self):
-    profile_list = ['reidhoffman']
-    for profile in profile_list:
-        linkedin_people_url = f'https://www.linkedin.com/in/{profile}/' 
-        yield scrapy.Request(url=linkedin_people_url, callback=self.parse_profile, meta={'profile': profile, 'linkedin_url': linkedin_people_url})
-
-
-```
-
-Then to run the spider, enter one of the following command:
-
-```
-
-scrapy crawl linkedin_people_profile
-
-```
-
-
-## Customizing The LinkedIn People Profile Scraper
-The following are instructions on how to modify the LinkedIn People Profile scraper for your particular use case.
-
-Check out this [guide to building a LinkedIn.com Scrapy people profile spider](https://scrapeops.io/python-scrapy-playbook/python-scrapy-linkedin-people-scraper//) if you need any more information.
-
-### Configuring LinkedIn People Profile Search
-To change the query parameters for the people profile search just change the profiles in the `profile_list` lists in the spider.
-
-For example:
-
-```python
-
-def start_requests(self):
-    profile_list = ['reidhoffman', 'other_person']
-    for profile in profile_list:
-        linkedin_people_url = f'https://www.linkedin.com/in/{profile}/' 
-        yield scrapy.Request(url=linkedin_people_url, callback=self.parse_profile, meta={'profile': profile, 'linkedin_url': linkedin_people_url})
-
-```
-
-### Extract More/Different Data
-LinkedIn People Profile pages contain a lot of useful data, however, in this spider is configured to only parse:
-
-- Name
-- Description
-- Number of followers
-- Number of connections
-- Location
-- About
-- Experienes - organisation name, organisation profile link, position, start & end dates, description.
-- Education - organisation name, organisation profile link, course details, start & end dates, description.
-
-You can expand or change the data that gets extract by adding additional parsers and adding the data to the `item` that is yielded in the `parse_profiles` method:
-
-
-### Speeding Up The Crawl
-The spiders are set to only use 1 concurrent thread in the ``settings.py`` file as the ScrapeOps Free Proxy Plan only gives you 1 concurrent thread.
-
-However, if you upgrade to a paid ScrapeOps Proxy plan you will have more concurrent threads. Then you can increase the concurrency limit in your scraper by updating the `CONCURRENT_REQUESTS` value in your ``settings.py`` file.
-
-```python
-# settings.py
-
-CONCURRENT_REQUESTS = 10
-
-```
-
-### Storing Data
-The spiders are set to save the scraped data into a CSV file and store it in a data folder using [Scrapy's Feed Export functionality](https://docs.scrapy.org/en/latest/topics/feed-exports.html).
-
-```python
-
-custom_settings = {
-        'FEEDS': { 'data/%(name)s_%(time)s.csv': { 'format': 'csv',}}
-        }
-
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
