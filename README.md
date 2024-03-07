@@ -8,6 +8,22 @@
 [![MIT][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="200" height="200">
+  </a>
+
+  <p align="center">
+    <br />
+    <br />
+    <br />
+    <a href="https://github.com/cprite/cover-letter-builder/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/cprite/over-letter-builder/issues">Request Feature</a>
+  </p>
+</div>
 
 
 <!-- TABLE OF CONTENTS -->
