@@ -113,7 +113,10 @@ This project was inspired by the remarkable work found at [linkedin-python-scrap
    pip install -r requirements.txt
    ```
    
-6. Ready to Go!
+6. Profile visibility
+   - Ensure your LinkedIn profile is set to public visibility to utilize this software successfully.
+   
+7. Ready to Go!
    - To run the program, execute the following command and follow simple instructions
      ```
 
