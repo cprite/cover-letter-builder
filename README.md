@@ -1,3 +1,15 @@
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<a name="readme-top"></a>
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+
+
 ## ScrapeOps Proxy
 This LinkedIn spider uses [ScrapeOps Proxy](https://scrapeops.io/proxy-aggregator/) as the proxy solution. ScrapeOps has a free plan that allows you to make up to 1,000 requests per month which makes it ideal for the development phase, but can be easily scaled up to millions of pages per month if needs be.
 
@@ -137,3 +149,19 @@ custom_settings = {
         }
 
 ```
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/cprite/cover-letter-builder.svg?style=for-the-badge
+[contributors-url]: https://github.com/cprite/cover-letter-builder/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/cprite/cover-letter-builder.svg?style=for-the-badge
+[forks-url]: https://github.com/cprite/cover-letter-builder/network/members
+[stars-shield]: https://img.shields.io/github/stars/cprite/cover-letter-builder.svg?style=for-the-badge
+[stars-url]: https://github.com/cprite/cover-letter-builder/stargazers
+[issues-shield]: https://img.shields.io/github/issues/cprite/cover-letter-builder.svg?style=for-the-badge
+[issues-url]: https://github.com/cprite/cover-letter-builder/issues
+[license-shield]: https://img.shields.io/github/license/cprite/cover-letter-builder.svg?style=for-the-badge
+[license-url]: https://github.com/cprite/cover-letter-builder/blob/master/LICENSE.md
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/niknmirosh
