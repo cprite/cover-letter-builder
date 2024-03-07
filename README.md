@@ -63,6 +63,7 @@ This project is developed solely for educational purposes to demonstrate the cap
       }
       
       ```
+     
 3. Set up OpenAI API
    - To use this software, you need an OpenAI API key, which powers the AI-driven features, including generating personalized cover letters based on your LinkedIn profile.
    - Sign up for an account at [OpenAI](https://openai.com/)
@@ -82,14 +83,17 @@ This project is developed solely for educational purposes to demonstrate the cap
         client = OpenAI(api_key = 'OPENAI_API_KEY')
       
     ```
+   
 4. Clone the repo
    ```sh
    git clone https://github.com/cprite/cover-letter-builder.git
    ```
+   
 5. Install the required dependencies
    ```sh
    pip install -r requirements.txt
    ```
+   
 6. Ready to Go!
    - To run the program, execute the following command and follow simple instructions
      ```
