@@ -179,8 +179,8 @@ class LinkedInPeopleProfileSpider(scrapy.Spider):
              and education, craft a personalized cover letter for specified company applying for the specified position. Highlight relevant experiences and skills that
              align with the job description, demonstrating why the candidate is the best fit for the role. Ensure the tone is professional and matches the company's culture."""},
 
-            {"role": "user", "content": f"Company name: {company}; Desired role: {desired_role}; Data from LinkedIn: {item};
-             Focus on: {extra} (if empty, skip this part)"},
+            {"role": "user", "content": f"""Company name: {company}; Desired role: {desired_role}; Data from LinkedIn: {item};
+             Focus on: {extra} (if empty, skip this part)"""},
         ]
         )
 
