@@ -34,8 +34,8 @@
 
 **No Phishing** is an advanced browser extension using artificial intelligence to detect phishing threats with 91% accuracy in real time and provides instant notifications about potential phishing threats. It's very easy to install and operate, providing a seamless browsing experience. It's designed for Google Chrome to enhance online security for both individuals and businesses.
 
-### Disclaimer
-This extension is intended as a supplementary tool for online safety. While it demonstrates high accuracy, it is not infallible. As the developer, I am not a certified cybersecurity professional, and the extension could make errors. Users are advised to exercise caution and judgment. By using "No Phishing," you acknowledge and accept responsibility for your online safety.
+### ❗❗❗ Disclaimer
+This project is developed solely for educational purposes to demonstrate the capabilities of web scraping and AI-powered content creation. Please be aware that scraping LinkedIn is against their Terms of Service. Users choosing to implement or use this program do so at their own risk and are fully responsible for complying with LinkedIn's policies and any applicable laws. This tool is not endorsed by or affiliated with LinkedIn or OpenAI. Always consider ethical guidelines and the legal implications of web scraping before use.
 
 ### Built With
 
