@@ -87,7 +87,7 @@ This project is developed solely for educational purposes to demonstrate the cap
    - Get your API key by pressing Create new secret key
    - Your API key is like a password. Keep it secure and do not share it. Store it in a safe place, as you will need it to configure the software.
    - Copy your API key and add to the `OPENAI_API_KEY` in the ``linkedin/spiders/linkedin_people_profile.py`` file.
-   ```python
+     ```python
 
       """
         BUILDING COVER LETTERS BASED ON THE DATA FROM LINKEDIN
@@ -98,7 +98,7 @@ This project is developed solely for educational purposes to demonstrate the cap
 
         client = OpenAI(api_key = 'OPENAI_API_KEY')
       
-    ```
+      ```
    
 4. Clone the repo
    ```sh
