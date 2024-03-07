@@ -64,8 +64,8 @@ This project is developed solely for educational purposes to demonstrate the cap
 <!-- GETTING STARTED -->
 ## Getting Started
 
-1. Set up proxy
-   - Since Linkedin doesn't allow user's to scrap their data, you have to set up a proxy.
+1. Set up a proxy
+   - Since LinkedIn does not permit users to scrape its data, you must set up a proxy.
    - You can [sign up for a free API key here](https://scrapeops.io/app/register/main). ScrapeOps has a free plan that allows you to make up to 1,000 requests per month.
    - Get your API key and add to the `SCRAPEOPS_API_KEY` in the ``settings.py`` file.
      ```python
