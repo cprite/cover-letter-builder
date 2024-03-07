@@ -83,7 +83,7 @@ This project was inspired by the remarkable work found at [linkedin-python-scrap
       
       ```
      
-3. Set up OpenAI API
+3. Set up an OpenAI API
    - To use this software, you need an OpenAI API key, which powers the AI-driven features, including generating personalized cover letters based on your LinkedIn profile.
    - Sign up for an account at [OpenAI](https://openai.com/)
    - Once you have an OpenAI account, log in and go to the API section and then to API Keys sidebar sectioon. Here, you'll find your API key, which is a unique token you'll use to authenticate your requests. 
