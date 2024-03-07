@@ -1,0 +1,4 @@
+scrapy
+openai
+scrapeops-scrapy-proxy-sdk
+scrapeops-scrapy
