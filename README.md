@@ -123,7 +123,7 @@ This project was inspired by the remarkable work found at [linkedin-python-scrap
       scrapy crawl linkedin_people_profile
       
       ```
-   - All cover letters will be saved in the program folder in cover_letters.txt file
+   - All cover letters will be saved in the program folder in ``cover_letters.txt`` file
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
